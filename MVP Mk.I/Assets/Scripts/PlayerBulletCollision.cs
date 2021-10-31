@@ -20,6 +20,11 @@ public class PlayerBulletCollision : MonoBehaviour
             Resources.decreasePlayerLives();
             Debug.Log("Player has collided with a bullet!" + counter);
         }
+        if (other.tag == "Ammo Crate")
+        {
+            Resources.addReserveAmmo(other.gameObject.GetComponent<AmmoCrateController>().getAmmoCount());
+            Destroy(other.gameObject);
+        }
         //Animacao de morte
         //Resetar vida do jogador
         //Se vida do jogado < 0 -> Game over

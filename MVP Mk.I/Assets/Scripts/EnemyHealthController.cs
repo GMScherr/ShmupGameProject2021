@@ -6,10 +6,14 @@ public class EnemyHealthController : MonoBehaviour
 {
     [SerializeField] private int enemyHealth = 5;
     [SerializeField] private int damagedReceivedOnHit = 5;
+    [SerializeField] private bool destroyOnDeath = true;
+    [SerializeField] private float deathTimer = 5;
     [SerializeField] private int ammoCount = 0;
     [SerializeField] private float ammoLossRate = 0;
     private float ammoLossRateAux;
     [SerializeField] private bool isFiring = true;
+    [SerializeField] private GameObject AmmoCrate;
+    private bool crateHasNotDropped = true;
 
     public void setFiringTrue ()
     {
@@ -39,18 +43,27 @@ public class EnemyHealthController : MonoBehaviour
         }
     }
 
-// Update is called once per frame
 void Update()
     {
-        if (enemyHealth < 0)
+        if ((deathTimer <= 0) && (destroyOnDeath))
             Destroy(this.gameObject);
+        if (deathTimer < 0)
+            deathTimer = 0;
+        if (enemyHealth <= 0)
+            deathTimer = deathTimer - Time.deltaTime;
         ammoLossRateAux = ammoLossRateAux - Time.deltaTime;
         if ((ammoLossRateAux < 0)&&(isFiring))
         {
             ammoLossRateAux = ammoLossRate;
             ammoCount--;
         }
-        if (ammoCount <= 0)
+        if ((ammoCount <= 0) || (enemyHealth <= 0))
             setFiringFalse();
+        if ((enemyHealth <= 0) && (crateHasNotDropped) && (ammoCount > 0))
+        {
+            crateHasNotDropped = false;
+            GameObject CurrentCrate = Instantiate(AmmoCrate, transform.position, Quaternion.identity);
+            CurrentCrate.GetComponent<AmmoCrateController>().setAmmoCount(ammoCount);
+        }
     }
 }
