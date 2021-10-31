@@ -293,6 +293,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6539196625429383597, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
   m_PrefabInstance: {fileID: 6820362411386472019}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1395462507 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5204711262100718188, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
+  m_PrefabInstance: {fileID: 6820362411386472019}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395462506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbcc0c3b3bcb9694f830e5025304b928, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1395462513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,13 +311,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1395462506}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e34c59733b86ab488f6c09c6a9f3f75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shotInterval: 0.2
+  isFiring: 1
   bullet: {fileID: 912371924417391075, guid: 219581adfd831d146bd2612389e8ec91, type: 3}
+  Resources: {fileID: 1395462507}
   bulletSpeedX: 30
   bulletSpeedY: 30
   angle: 0
@@ -321,13 +334,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1395462506}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e34c59733b86ab488f6c09c6a9f3f75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shotInterval: 0.7
+  isFiring: 1
   bullet: {fileID: 4807503895819902754, guid: f53d52173bb2c4245bc5233481041463, type: 3}
+  Resources: {fileID: 1395462507}
   bulletSpeedX: 35
   bulletSpeedY: 35
   angle: 0
@@ -465,8 +480,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 912371924417391075, guid: 219581adfd831d146bd2612389e8ec91, type: 3}
     - target: {fileID: 1924484640408025062, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
+      propertyPath: Resources
+      value: 
+      objectReference: {fileID: 1395462507}
+    - target: {fileID: 1924484640408025062, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1924484640408025062, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
       propertyPath: bulletSpeedX
@@ -509,16 +528,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1552835291}
     - target: {fileID: 4966135296558494798, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
+      propertyPath: Resources
+      value: 
+      objectReference: {fileID: 1395462507}
+    - target: {fileID: 4966135296558494798, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4966135296558494798, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
       propertyPath: trackedPlayer
       value: 
       objectReference: {fileID: 1552835291}
     - target: {fileID: 5204711262100718188, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
+      propertyPath: ammoCount
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 5204711262100718188, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
       propertyPath: enemyHealth
       value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 5204711262100718188, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
+      propertyPath: ammoLossRate
+      value: 0.005
       objectReference: {fileID: 0}
     - target: {fileID: 5586593391892465214, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
       propertyPath: enemySpeedX
@@ -530,7 +561,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6539196625429383597, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5586593391892465214, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}

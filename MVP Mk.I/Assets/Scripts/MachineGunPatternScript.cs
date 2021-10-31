@@ -25,6 +25,7 @@ public class MachineGunPatternScript : MonoBehaviour
     [SerializeField] private bool isFiring = true;
     private float shotIntervalAux;
     [SerializeField] private GameObject bullet;
+    [SerializeField] private EnemyHealthController Resources;
     [SerializeField] private float bulletSpeedX = 60;
     [SerializeField] private float bulletSpeedY = 60;
     [SerializeField] private bool bulletScatter = true;
@@ -102,6 +103,8 @@ public class MachineGunPatternScript : MonoBehaviour
     {
 
      shotIntervalAux = shotIntervalAux - Time.deltaTime;
+     if (Resources != null)
+         isFiring = Resources.getFiringStatus();
      if ((shotIntervalAux < 0)&&(isFiring))
         Shoot();
      if (shotIntervalAux < 0)

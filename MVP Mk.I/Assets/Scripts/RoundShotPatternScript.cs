@@ -22,8 +22,10 @@ using UnityEngine;
 public class RoundShotPatternScript : MonoBehaviour
 {
     [SerializeField] private float shotInterval = 0.0005f;
+    [SerializeField] private bool isFiring = true;
     private float shotIntervalAux;
     [SerializeField] private GameObject bullet;
+    [SerializeField] private EnemyHealthController Resources;
     [SerializeField] private float bulletSpeedX = 60;
     [SerializeField] private float bulletSpeedY = 60;
     [SerializeField] private float angle = 0;
@@ -31,6 +33,16 @@ public class RoundShotPatternScript : MonoBehaviour
     [SerializeField] private int numberOfShots = 1;
     [SerializeField] private bool spiralPattern = true;
     [SerializeField] private bool clockWiseSpin = false;
+
+    public void setFiringStatusTrue()
+    {
+        isFiring = true;
+    }
+    public void setFiringSatusFalse()
+    {
+        isFiring = false;
+    }
+
     void Start()
     {
         shotIntervalAux = shotInterval;
@@ -56,7 +68,9 @@ public class RoundShotPatternScript : MonoBehaviour
     void Update()
     {
         shotIntervalAux = shotIntervalAux - Time.deltaTime;
-        if (shotIntervalAux < 0)
+        if(Resources != null)
+            isFiring = Resources.getFiringStatus();
+        if ((shotIntervalAux < 0)&&(isFiring))
             Shoot();
         if (angle > 360)
             angle = angle - 360;
