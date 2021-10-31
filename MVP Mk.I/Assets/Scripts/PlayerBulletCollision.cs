@@ -5,16 +5,19 @@ using UnityEngine;
 public class PlayerBulletCollision : MonoBehaviour
 {
     private int counter;
+    private PlayerResourceController Resources;
 
     private void Start()
     {
         counter = 0;
+        Resources = GetComponentInChildren<PlayerResourceController>();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Bullet")
         {
             counter++;
+            Resources.decreasePlayerLives();
             Debug.Log("Player has collided with a bullet!" + counter);
         }
         //Animacao de morte

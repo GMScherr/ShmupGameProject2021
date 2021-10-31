@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654142587020542267}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.050000004, y: -1.21, z: 0}
+  m_LocalPosition: {x: -0.009999968, y: -1.6702003, z: 0}
   m_LocalScale: {x: 20, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 654142587753279910}
@@ -126,8 +126,8 @@ GameObject:
   m_Component:
   - component: {fileID: 654142587753279910}
   - component: {fileID: 654142587753279909}
-  - component: {fileID: 654142587753279896}
   - component: {fileID: 654142587753279908}
+  - component: {fileID: 6068929818246035116}
   - component: {fileID: 654142587753279897}
   - component: {fileID: 654142587753279911}
   m_Layer: 0
@@ -195,7 +195,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.15686275}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -205,32 +205,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &654142587753279896
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 654142587753279907}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!50 &654142587753279908
 Rigidbody2D:
   serializedVersion: 4
@@ -252,6 +226,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!58 &6068929818246035116
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654142587753279907}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.3
 --- !u!114 &654142587753279897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,7 +295,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 654142587799190037}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.05, y: -1.4098, z: 0}
+  m_LocalPosition: {x: -0.01, y: -1.87, z: 0}
   m_LocalScale: {x: 20, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 654142587753279910}
@@ -404,11 +394,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5979906233417777042}
   - component: {fileID: 1787231259112794765}
-  - component: {fileID: 7255429947387417368}
+  - component: {fileID: 981714947449138893}
   - component: {fileID: 1265312935217235135}
-  - component: {fileID: 3634666226660328629}
+  - component: {fileID: 4063838775707161888}
+  - component: {fileID: 4993995230723124514}
   m_Layer: 0
-  m_Name: MachineGun
+  m_Name: WeaponsController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -422,7 +413,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5670303341924868079}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.05, y: 2.17, z: 0}
+  m_LocalPosition: {x: -0.10999997, y: 1.7097998, z: 0}
   m_LocalScale: {x: 20, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 654142587753279910}
@@ -479,7 +470,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7255429947387417368
+--- !u!114 &981714947449138893
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -488,18 +479,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 5670303341924868079}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6e3fd42f51bc284a8cf63738ec9a2ad, type: 3}
+  m_Script: {fileID: 11500000, guid: a5f042f07f1a974408a8255a69c48dd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLives: 4
-  playerBombs: 4
-  MG_Ammo: 50
-  numberOfMagazines: 4
-  maxAmmunition: 200
-  reserveAmmo: 200
-  magazineSize: 50
-  playerScore: 0
-  scorePerExtra: 50
+  MG_Stats: {fileID: 1265312935217235135}
+  Pistol_Stats: {fileID: 4063838775707161888}
+  Resources: {fileID: 4993995230723124514}
+  MG_Select: 0
+  reloadCooldown: 0
+  reloadCooldownTime: 2
 --- !u!114 &1265312935217235135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -522,7 +510,7 @@ MonoBehaviour:
   trackPlayer: 0
   aimVector: {x: 0, y: 100}
   trackedPlayer: {fileID: 0}
---- !u!114 &3634666226660328629
+--- !u!114 &4063838775707161888
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -531,9 +519,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 5670303341924868079}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5f042f07f1a974408a8255a69c48dd3, type: 3}
+  m_Script: {fileID: 11500000, guid: 0862a363f4e3d294f8a508f6154df534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MG_Stats: {fileID: 1265312935217235135}
-  Resources: {fileID: 7255429947387417368}
-  reloadCooldownTime: 2
+  shotInterval: 0.2
+  isFiring: 0
+  bullet: {fileID: 912371924417391075, guid: 219581adfd831d146bd2612389e8ec91, type: 3}
+  bulletSpeedX: 0
+  bulletSpeedY: 125
+  bulletScatter: 0
+  circularErrorProbable: 5
+  trackPlayer: 0
+  aimVector: {x: 0, y: 100}
+  trackedPlayer: {fileID: 0}
+--- !u!114 &4993995230723124514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5670303341924868079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e3fd42f51bc284a8cf63738ec9a2ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLives: 4
+  playerBombs: 4
+  MG_Ammo: 50
+  numberOfMagazines: 4
+  maxAmmunition: 200
+  reserveAmmo: 200
+  magazineSize: 50
+  playerScore: 0
+  scorePerExtra: 50

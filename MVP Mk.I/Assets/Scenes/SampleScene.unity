@@ -510,7 +510,7 @@ PrefabInstance:
       objectReference: {fileID: 1552835291}
     - target: {fileID: 4966135296558494798, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4966135296558494798, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
       propertyPath: trackedPlayer
@@ -518,7 +518,7 @@ PrefabInstance:
       objectReference: {fileID: 1552835291}
     - target: {fileID: 5204711262100718188, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
       propertyPath: enemyHealth
-      value: 50
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 5586593391892465214, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
       propertyPath: enemySpeedX
@@ -530,7 +530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6539196625429383597, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5586593391892465214, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}

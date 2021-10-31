@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MachineGunControllerScript : MonoBehaviour
+public class WeaponsControllerScript : MonoBehaviour
 {
     [SerializeField] private MachineGunPatternScript MG_Stats;
+    [SerializeField] private MachineGunPatternScript Pistol_Stats;
     [SerializeField] private PlayerResourceController Resources;
     private bool fireKey;
     private bool reloadKey;
@@ -25,22 +26,34 @@ public class MachineGunControllerScript : MonoBehaviour
     void Update()
     {
         fireKey = Input.GetKey(KeyCode.Z);
-        if ((Resources.getMG_Ammo() > 0) && (fireKey) && (reloadCooldown == reloadCooldownTime))
-        {
-            MG_Stats.setFiringStatusTrue();
-        }
-        if ((!fireKey)||(Resources.getMG_Ammo() < 1)||(reloadCooldown != reloadCooldownTime))
-            MG_Stats.setFiringSatusFalse();
-        if (MG_Stats.getfiringStatus())
-        {
-            shotIntervalAux = shotIntervalAux - Time.deltaTime;
-            if (shotIntervalAux < 0)
+        //MG Firing logic
+            if ((Resources.getMG_Ammo() > 0) && (fireKey) && (reloadCooldown == reloadCooldownTime))
             {
-                shotIntervalAux = shotInterval;
-                Resources.decreaseMG_Ammo();
+                MG_Stats.setFiringStatusTrue();
             }
+            if ((!fireKey) || (Resources.getMG_Ammo() < 1) || (reloadCooldown != reloadCooldownTime))
+                MG_Stats.setFiringSatusFalse();
+            if (MG_Stats.getfiringStatus())
+            {
+                shotIntervalAux = shotIntervalAux - Time.deltaTime;
+                if (shotIntervalAux < 0)
+                {
+                    shotIntervalAux = shotInterval;
+                    Resources.decreaseMG_Ammo();
+                }
+            }
+        //Pistol firing logic
+        if((Resources.getMG_Ammo() <= 0)&&(reloadCooldown == reloadCooldownTime))
+        {
+            if (fireKey)
+                Pistol_Stats.setFiringStatusTrue();   
         }
+        else
+            Pistol_Stats.setFiringSatusFalse();
+        if (!fireKey)
+            Pistol_Stats.setFiringSatusFalse();
 
+        //Reload logic
         reloadKey = Input.GetKey(KeyCode.Space);
         if (reloadCooldown == reloadCooldownTime)
             canReload = true;
@@ -55,5 +68,6 @@ public class MachineGunControllerScript : MonoBehaviour
         reloadCooldown = reloadCooldown + Time.deltaTime;
         if (reloadCooldown > reloadCooldownTime)
             reloadCooldown = reloadCooldownTime;
+
     }
 }
