@@ -485,6 +485,7 @@ MonoBehaviour:
   MG_Stats: {fileID: 1265312935217235135}
   Pistol_Stats: {fileID: 4063838775707161888}
   Resources: {fileID: 4993995230723124514}
+  PlayerBomb: {fileID: 5376710188737233246, guid: d871d1b28f108d54e86f21fda30dcb7e, type: 3}
   reloadCooldown: 0
   reloadCooldownTime: 2
 --- !u!114 &1265312935217235135

@@ -7,8 +7,12 @@ public class WeaponsControllerScript : MonoBehaviour
     [SerializeField] private MachineGunPatternScript MG_Stats;
     [SerializeField] private MachineGunPatternScript Pistol_Stats;
     [SerializeField] private PlayerResourceController Resources;
+    [SerializeField] private GameObject PlayerBomb;
+    [SerializeField] private float bombCooldown;
+    [SerializeField] private float bombCooldownTime = 2;
     private bool fireKey;
     private bool reloadKey;
+    private bool bombKey;
     private float shotInterval;
     private float shotIntervalAux;
     [SerializeField] private float reloadCooldown;
@@ -18,9 +22,11 @@ public class WeaponsControllerScript : MonoBehaviour
     {
         fireKey = false;
         reloadKey = false;
+        bombKey = false;
         shotInterval = MG_Stats.getShotInterval();
         shotIntervalAux = shotInterval;
         reloadCooldown = reloadCooldownTime;
+        bombCooldown = bombCooldownTime;
     }
 
     void Update()
@@ -69,5 +75,20 @@ public class WeaponsControllerScript : MonoBehaviour
         if (reloadCooldown > reloadCooldownTime)
             reloadCooldown = reloadCooldownTime;
 
+        //Bomb logic
+        bombKey = Input.GetKey(KeyCode.X);
+        if (bombKey)
+        {
+            if ((Resources.getPlayerBombs() > 0) && (bombCooldown == bombCooldownTime))
+            {
+                GameObject Bomb = Instantiate(PlayerBomb, transform.position, Quaternion.identity);
+                Resources.decreasePlayerBombs();
+                bombCooldown = 0;
+            }
+        }
+        if (bombCooldown < bombCooldownTime)
+            bombCooldown = bombCooldown + Time.deltaTime;
+        if (bombCooldown > bombCooldownTime)
+            bombCooldown = bombCooldownTime;
     }
 }

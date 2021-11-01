@@ -25,6 +25,11 @@ public class PlayerBulletCollision : MonoBehaviour
             Resources.addReserveAmmo(other.gameObject.GetComponent<AmmoCrateController>().getAmmoCount());
             Destroy(other.gameObject);
         }
+        if (other.tag == "Grenade Crate"){
+            for (int i = 0;i < other.gameObject.GetComponent<AmmoCrateController>().getAmmoCount();i++)
+                Resources.incrementPlayerBombs();
+            Destroy(other.gameObject);
+        }
         //Animacao de morte
         //Resetar vida do jogador
         //Se vida do jogado < 0 -> Game over

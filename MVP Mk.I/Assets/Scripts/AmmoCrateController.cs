@@ -5,6 +5,7 @@ using UnityEngine;
 public class AmmoCrateController : MonoBehaviour
 {
     [SerializeField] private int ammoCount;
+    [SerializeField] private float crateLifeTime = 5;
 
     public void setAmmoCount(int amountToSet)
     {
@@ -22,6 +23,8 @@ public class AmmoCrateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        crateLifeTime = crateLifeTime - Time.deltaTime;
+        if (crateLifeTime < 0)
+            Destroy(this.gameObject);
     }
 }

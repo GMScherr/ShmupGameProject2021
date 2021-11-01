@@ -8,6 +8,8 @@ TagManager:
   - Player Bullet
   - Enemy
   - Ammo Crate
+  - Bomb
+  - Grenade Crate
   layers:
   - Default
   - TransparentFX

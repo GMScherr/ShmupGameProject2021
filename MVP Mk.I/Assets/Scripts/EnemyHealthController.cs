@@ -6,6 +6,7 @@ public class EnemyHealthController : MonoBehaviour
 {
     [SerializeField] private int enemyHealth = 5;
     [SerializeField] private int damagedReceivedOnHit = 5;
+    [SerializeField] private int damageReceivedBomb = 50;
     [SerializeField] private bool destroyOnDeath = true;
     [SerializeField] private float deathTimer = 5;
     [SerializeField] private int ammoCount = 0;
@@ -40,6 +41,11 @@ public class EnemyHealthController : MonoBehaviour
             enemyHealth = enemyHealth - damagedReceivedOnHit;
             Destroy(other.gameObject);
             Debug.Log("Enemy was hit by a bullet!");
+        }
+        if (other.tag == "Bomb")
+        {
+            enemyHealth = enemyHealth - damageReceivedBomb;
+            Debug.Log("Enemy was hit by a bomb!");
         }
     }
 
