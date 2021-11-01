@@ -6,11 +6,13 @@ public class PlayerBulletCollision : MonoBehaviour
 {
     private int counter;
     private PlayerResourceController Resources;
+    private Rigidbody2D RB;
 
     private void Start()
     {
         counter = 0;
         Resources = GetComponentInChildren<PlayerResourceController>();
+        RB = GetComponent<Rigidbody2D>();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -29,6 +31,11 @@ public class PlayerBulletCollision : MonoBehaviour
             for (int i = 0;i < other.gameObject.GetComponent<AmmoCrateController>().getAmmoCount();i++)
                 Resources.incrementPlayerBombs();
             Destroy(other.gameObject);
+        }
+        if (other.tag == "Player Lateral Limit")
+        {
+            RB.transform.position = new Vector2 (other.GetComponent<Rigidbody2D>().transform.position.x + 5,RB.transform.position.y);
+            Debug.Log("Player has hit a lateral Limit!");
         }
         //Animacao de morte
         //Resetar vida do jogador

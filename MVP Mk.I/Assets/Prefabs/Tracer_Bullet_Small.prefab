@@ -134,5 +134,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05b167a4016fefc40ac420664601a538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletLifeTime: 2
+  bulletLifeTime: 3
   alignToVector: 1

@@ -10,8 +10,10 @@ public class PlayerMovementScript : MonoBehaviour
     private bool downKey;
     private bool leftKey;
     private bool leftShiftKey;
-    public float speed_modifier = 1;
-    public float speed_modifier_focus = 0.5f;
+    [SerializeField] private float speed_modifier = 1;
+    [SerializeField] private float speed_modifier_focus = 0.5f;
+    private Rigidbody2D RB;
+    private Vector2 velocityVector;
 
 
     // Start is called before the first frame update
@@ -22,6 +24,8 @@ public class PlayerMovementScript : MonoBehaviour
         downKey = false;
         leftKey = false;
         leftShiftKey = false;
+        RB = GetComponent<Rigidbody2D>();
+        velocityVector = new Vector2 (0, 0);
     }
 
     // Update is called once per frame
@@ -36,16 +40,26 @@ public class PlayerMovementScript : MonoBehaviour
 
         float movement_speed;
         if (leftShiftKey)
-            movement_speed = speed_modifier_focus * Time.deltaTime;
+            movement_speed = speed_modifier_focus;
         else
-            movement_speed = speed_modifier * Time.deltaTime;
+            movement_speed = speed_modifier;
+
         if (upKey)
-            transform.Translate(0f, movement_speed, 0f);
+            velocityVector.y = movement_speed;
+        else
+            if (downKey)
+                velocityVector.y = -movement_speed;
+            else
+                velocityVector.y = 0;
+
         if (rightKey)
-            transform.Translate(movement_speed, 0f, 0f);
-        if (downKey)
-            transform.Translate(0f, -movement_speed, 0f);
-        if (leftKey)
-            transform.Translate(-movement_speed, 0f, 0f);
+            velocityVector.x = movement_speed;
+        else
+            if (leftKey)
+            velocityVector.x = -movement_speed;
+            else
+                velocityVector.x = 0;
+
+        RB.velocity = velocityVector;
     }
 }
