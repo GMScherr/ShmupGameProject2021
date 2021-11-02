@@ -32,11 +32,6 @@ public class PlayerBulletCollision : MonoBehaviour
                 Resources.incrementPlayerBombs();
             Destroy(other.gameObject);
         }
-        if (other.tag == "Player Lateral Limit")
-        {
-            RB.transform.position = new Vector2 (other.GetComponent<Rigidbody2D>().transform.position.x + 5,RB.transform.position.y);
-            Debug.Log("Player has hit a lateral Limit!");
-        }
         //Animacao de morte
         //Resetar vida do jogador
         //Se vida do jogado < 0 -> Game over

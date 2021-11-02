@@ -311,7 +311,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1395462506}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e34c59733b86ab488f6c09c6a9f3f75, type: 3}
   m_Name: 
@@ -334,7 +334,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1395462506}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e34c59733b86ab488f6c09c6a9f3f75, type: 3}
   m_Name: 
@@ -485,7 +485,7 @@ PrefabInstance:
       objectReference: {fileID: 1395462507}
     - target: {fileID: 1924484640408025062, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1924484640408025062, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
       propertyPath: bulletSpeedX

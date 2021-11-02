@@ -9,6 +9,8 @@ using UnityEngine;
 //chosen within a circle of radius circularErrorProbable around the target being aimed at. If set to false, all shots will land true at the aimed position.
 //-Track Player defines whether the stream will aim at the player or not. If set to true, a GameObject must be provided in order for the tracking to work. If set to false, the point of aim will default to Aim Vector.
 //-Aim Vector is the default aiming vector. It is usually set to (0,0), meaning the shots will fly with only the Y component (Vertically down). Aim Vector can be manually adjusted in order to set the stream's aim.
+//-Aim At Vector toggles what behaviour the Aim Vector will have. If it is on, the stream will fire at that vector relative to the world ((0,0) will fire at the world origin). If it is toggled off, it will multiply
+//your bullet's velocity by the provided vector ((0,0) will halt all bullet movement). Toggling Track Player will toggle Aim At Vector on during Start time. These parameters are not to be changed during runtime.
 
 //Tips on using this script :
 //This script should be your game's most basic script, don't be shy about spamming the living hell out of it. In conjunction with moving enemies, this script can be used to make very simple but effective shot
@@ -32,6 +34,7 @@ public class MachineGunPatternScript : MonoBehaviour
     [SerializeField] private float circularErrorProbable = 5;
     [SerializeField] private bool trackPlayer = true;
     [SerializeField] private Vector2 aimVector;
+    [SerializeField] private bool aimAtVector = false;
     [SerializeField] private GameObject trackedPlayer;
     private Vector2 pointOfAim;
 
@@ -60,6 +63,8 @@ public class MachineGunPatternScript : MonoBehaviour
     void Start()
     {
         shotIntervalAux = shotInterval;
+        if (trackPlayer)
+            aimAtVector = true;
     }
 
     void Shoot()
@@ -94,6 +99,8 @@ public class MachineGunPatternScript : MonoBehaviour
         Vector2 firingVector;
         firingVector.x = pointOfAim.x - transform.position.x;
         firingVector.y = pointOfAim.y - transform.position.y;
+        if(!aimAtVector)
+            firingVector = aimVector;
         firingVector.Normalize();
         GameObject currentBullet = Instantiate(bullet, transform.position, Quaternion.identity);
         currentBullet.GetComponent<BulletMovementVectorScript>().setBulletSpeedX(bulletSpeedX * firingVector.x);
