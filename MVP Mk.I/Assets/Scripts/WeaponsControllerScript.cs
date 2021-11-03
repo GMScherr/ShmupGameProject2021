@@ -13,6 +13,7 @@ public class WeaponsControllerScript : MonoBehaviour
     private bool fireKey;
     private bool reloadKey;
     private bool bombKey;
+    private bool focusKey;
     private float shotInterval;
     private float shotIntervalAux;
     [SerializeField] private float reloadCooldown;
@@ -23,6 +24,7 @@ public class WeaponsControllerScript : MonoBehaviour
         fireKey = false;
         reloadKey = false;
         bombKey = false;
+        focusKey = false;
         shotInterval = MG_Stats.getShotInterval();
         shotIntervalAux = shotInterval;
         reloadCooldown = reloadCooldownTime;
@@ -32,7 +34,10 @@ public class WeaponsControllerScript : MonoBehaviour
     void Update()
     {
         fireKey = Input.GetKey(KeyCode.Z);
+        focusKey = Input.GetKey(KeyCode.LeftShift);
         //MG Firing logic
+        MG_Stats.setScatterValue(!focusKey);
+            
             if ((Resources.getMG_Ammo() > 0) && (fireKey) && (reloadCooldown == reloadCooldownTime))
             {
                 MG_Stats.setFiringStatusTrue();

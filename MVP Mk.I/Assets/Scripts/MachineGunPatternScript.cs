@@ -60,6 +60,20 @@ public class MachineGunPatternScript : MonoBehaviour
         isFiring = false;
     }
 
+    public void setScatterTrue()
+    {
+        bulletScatter = true;
+    }
+
+    public void setScatterFalse()
+    {
+        bulletScatter = false;
+    }
+
+    public void setScatterValue (bool value)
+    {
+        bulletScatter = value;
+    }
     void Start()
     {
         shotIntervalAux = shotInterval;
@@ -100,7 +114,7 @@ public class MachineGunPatternScript : MonoBehaviour
         firingVector.x = pointOfAim.x - transform.position.x;
         firingVector.y = pointOfAim.y - transform.position.y;
         if(!aimAtVector)
-            firingVector = aimVector;
+            firingVector = pointOfAim;
         firingVector.Normalize();
         GameObject currentBullet = Instantiate(bullet, transform.position, Quaternion.identity);
         currentBullet.GetComponent<BulletMovementVectorScript>().setBulletSpeedX(bulletSpeedX * firingVector.x);

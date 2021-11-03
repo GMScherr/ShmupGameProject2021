@@ -506,12 +506,13 @@ MonoBehaviour:
   isFiring: 0
   bullet: {fileID: 5370493656897473435, guid: c6c3df10ef1d39a429b204cd04315523, type: 3}
   Resources: {fileID: 0}
-  bulletSpeedX: 0
+  bulletSpeedX: 125
   bulletSpeedY: 125
   bulletScatter: 0
   circularErrorProbable: 5
   trackPlayer: 0
   aimVector: {x: 0, y: 100}
+  aimAtVector: 0
   trackedPlayer: {fileID: 0}
 --- !u!114 &4063838775707161888
 MonoBehaviour:
@@ -535,6 +536,7 @@ MonoBehaviour:
   circularErrorProbable: 5
   trackPlayer: 0
   aimVector: {x: 0, y: 100}
+  aimAtVector: 0
   trackedPlayer: {fileID: 0}
 --- !u!114 &4993995230723124514
 MonoBehaviour:

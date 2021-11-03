@@ -536,6 +536,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4966135296558494798, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
+      propertyPath: bulletScatter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4966135296558494798, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
       propertyPath: trackedPlayer
       value: 
       objectReference: {fileID: 1552835291}
@@ -545,7 +549,7 @@ PrefabInstance:
       objectReference: {fileID: 8774932438477779361, guid: 5bc45d54b9269cf4d808bae1a087d966, type: 3}
     - target: {fileID: 5204711262100718188, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
       propertyPath: ammoCount
-      value: 5000
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 5204711262100718188, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
       propertyPath: enemyHealth
