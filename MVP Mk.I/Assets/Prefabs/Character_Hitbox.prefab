@@ -504,10 +504,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotInterval: 0.075
   isFiring: 0
+  shotIntervalAux: 0
   bullet: {fileID: 5370493656897473435, guid: c6c3df10ef1d39a429b204cd04315523, type: 3}
   Resources: {fileID: 0}
   bulletSpeedX: 125
   bulletSpeedY: 125
+  bulletLifespan: 0.5
   bulletScatter: 0
   circularErrorProbable: 5
   trackPlayer: 0
@@ -528,10 +530,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotInterval: 0.2
   isFiring: 0
+  shotIntervalAux: 0
   bullet: {fileID: 5370493656897473435, guid: c6c3df10ef1d39a429b204cd04315523, type: 3}
   Resources: {fileID: 0}
   bulletSpeedX: 0
   bulletSpeedY: 125
+  bulletLifespan: 0.5
   bulletScatter: 0
   circularErrorProbable: 5
   trackPlayer: 0
