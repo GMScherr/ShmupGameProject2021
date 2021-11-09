@@ -44,11 +44,11 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Player Layer
-    uniqueID: 1841892609
-    locked: 0
   - name: Enemy Layer
     uniqueID: 230550471
+    locked: 0
+  - name: Player Layer
+    uniqueID: 1841892609
     locked: 0
   - name: Default
     uniqueID: 0

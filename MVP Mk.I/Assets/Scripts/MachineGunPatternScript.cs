@@ -3,8 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 //Pattern script for a single bullet stream. By tinkering with its parameters you may change pattern behaviour as follows :
 //-Shot Interval describes, in seconds, the amount of time waited between each shot.
+//-Shot Interval Aux is the internal variable actually used to define when the weapon will shoot. Manually setting it makes it so one can make "burst" patterns. This effect can be achieved by having multiple
+//instances of this script located at the same location, all identical except for their aux time. Mind you : because of how unity loads, the values need to be a bit bigger than you expect for it to work. For example
+//, if you have two instances, one with aux set to 0.2 and the other to 0, it will not work. If, however, they are set to 2.2 and 2, it will work as intended. Only worth noting for test enemies where you want them
+//to load and open fire immediately after the game starts running.
 //-Is Firing enables and disables the gun from firing. Use it to make enemies fire in bursts instead of constant fire.
 //-The X and Y speed parameters define the velocity of the bullet in the X and Y axis. Careful with how you set your velocities, things can get pretty weird if you don't know what you're doing.
+//-Bullet lifespan can be manually set using this field. Naturally, bullets that clear the screen faster need not live as long as slower bullets, so set their lifetimes accordingly.
 //-Bullet Scatter defines whether or not the stream will have pinpoint accuracy at the point of aim. If activated, each bullet will fire at a slightly different location. This location is defined by a point randomly
 //chosen within a circle of radius circularErrorProbable around the target being aimed at. If set to false, all shots will land true at the aimed position.
 //-Track Player defines whether the stream will aim at the player or not. If set to true, a GameObject must be provided in order for the tracking to work. If set to false, the point of aim will default to Aim Vector.
@@ -25,11 +30,12 @@ public class MachineGunPatternScript : MonoBehaviour
 {
     [SerializeField] private float shotInterval = 0.0005f;
     [SerializeField] private bool isFiring = true;
-    private float shotIntervalAux;
+    [SerializeField] private float shotIntervalAux = 0;
     [SerializeField] private GameObject bullet;
     [SerializeField] private EnemyHealthController Resources;
     [SerializeField] private float bulletSpeedX = 60;
     [SerializeField] private float bulletSpeedY = 60;
+    [SerializeField] private float bulletLifespan = 5;
     [SerializeField] private bool bulletScatter = true;
     [SerializeField] private float circularErrorProbable = 5;
     [SerializeField] private bool trackPlayer = true;
@@ -76,7 +82,6 @@ public class MachineGunPatternScript : MonoBehaviour
     }
     void Start()
     {
-        shotIntervalAux = shotInterval;
         if (trackPlayer)
             aimAtVector = true;
     }
@@ -119,6 +124,7 @@ public class MachineGunPatternScript : MonoBehaviour
         GameObject currentBullet = Instantiate(bullet, transform.position, Quaternion.identity);
         currentBullet.GetComponent<BulletMovementVectorScript>().setBulletSpeedX(bulletSpeedX * firingVector.x);
         currentBullet.GetComponent<BulletMovementVectorScript>().setBulletSpeedY(bulletSpeedY * firingVector.y);
+        currentBullet.GetComponent<BulletMovementVectorScript>().setBulletLifespan(bulletLifespan);
     }
     void Update()
     {

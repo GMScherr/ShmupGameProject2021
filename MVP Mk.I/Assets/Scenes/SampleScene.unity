@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbcc0c3b3bcb9694f830e5025304b928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1395462513
+--- !u!114 &1395462508
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -313,11 +313,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 1395462506}
   m_Enabled: 0
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0862a363f4e3d294f8a508f6154df534, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shotInterval: 1
+  isFiring: 1
+  shotIntervalAux: 2.1
+  bullet: {fileID: 912371924417391075, guid: 219581adfd831d146bd2612389e8ec91, type: 3}
+  Resources: {fileID: 1395462507}
+  bulletSpeedX: 60
+  bulletSpeedY: 60
+  bulletScatter: 0
+  circularErrorProbable: 5
+  trackPlayer: 1
+  aimVector: {x: 0, y: 0}
+  aimAtVector: 0
+  trackedPlayer: {fileID: 1552835291}
+--- !u!114 &1395462513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395462506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e34c59733b86ab488f6c09c6a9f3f75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shotInterval: 0.2
   isFiring: 1
+  shotIntervalAux: 0
   bullet: {fileID: 912371924417391075, guid: 219581adfd831d146bd2612389e8ec91, type: 3}
   Resources: {fileID: 1395462507}
   bulletSpeedX: 30
@@ -334,13 +360,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1395462506}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e34c59733b86ab488f6c09c6a9f3f75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shotInterval: 0.7
   isFiring: 1
+  shotIntervalAux: 0
   bullet: {fileID: 4807503895819902754, guid: f53d52173bb2c4245bc5233481041463, type: 3}
   Resources: {fileID: 1395462507}
   bulletSpeedX: 35
@@ -348,7 +375,7 @@ MonoBehaviour:
   angle: 0
   angleIncrement: 38
   numberOfShots: 30
-  spiralPattern: 1
+  spiralPattern: 0
   clockWiseSpin: 0
 --- !u!1 &1552835291 stripped
 GameObject:
@@ -485,7 +512,7 @@ PrefabInstance:
       objectReference: {fileID: 1395462507}
     - target: {fileID: 1924484640408025062, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1924484640408025062, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
       propertyPath: bulletSpeedX
@@ -510,6 +537,10 @@ PrefabInstance:
     - target: {fileID: 1924484640408025062, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
       propertyPath: angleIncrement
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1924484640408025062, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
+      propertyPath: shotIntervalAux
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2187690877188426898, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
       propertyPath: m_Enabled
@@ -536,13 +567,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4966135296558494798, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
-      propertyPath: bulletScatter
+      propertyPath: aimAtVector
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4966135296558494798, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
+      propertyPath: shotInterval
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4966135296558494798, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
+      propertyPath: bulletScatter
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4966135296558494798, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
       propertyPath: trackedPlayer
       value: 
       objectReference: {fileID: 1552835291}
+    - target: {fileID: 4966135296558494798, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
+      propertyPath: shotIntervalAux
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5204711262100718188, guid: 8c0d5aba288c9a241bc6ae3da7d82dae, type: 3}
       propertyPath: AmmoCrate
       value: 

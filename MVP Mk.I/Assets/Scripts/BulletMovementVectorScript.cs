@@ -25,6 +25,11 @@ public class BulletMovementVectorScript : MonoBehaviour
         this.bulletSpeedY = speed;
     }
 
+    public void setBulletLifespan(float lifespan)
+    {
+        bulletLifeTime = lifespan;
+    }
+
     void Update()
     {
         bulletLifeTime = bulletLifeTime - Time.deltaTime;
