@@ -261,6 +261,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1984597251720089033, guid: 65032dda9e83c034caae1bdfdc8e25a0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266634670736665336, guid: 65032dda9e83c034caae1bdfdc8e25a0, type: 3}
+      propertyPath: trackedPlayer
+      value: 
+      objectReference: {fileID: 1060642288}
     - target: {fileID: 8029539289533460892, guid: 65032dda9e83c034caae1bdfdc8e25a0, type: 3}
       propertyPath: m_SortingOrder
       value: 3
@@ -630,6 +638,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1984597251720089033, guid: 65032dda9e83c034caae1bdfdc8e25a0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266634670736665336, guid: 65032dda9e83c034caae1bdfdc8e25a0, type: 3}
+      propertyPath: trackedPlayer
+      value: 
+      objectReference: {fileID: 1060642288}
     - target: {fileID: 8029539289533460892, guid: 65032dda9e83c034caae1bdfdc8e25a0, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -1109,6 +1125,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1205885353971898176, guid: 65032dda9e83c034caae1bdfdc8e25a0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1984597251720089033, guid: 65032dda9e83c034caae1bdfdc8e25a0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266634670736665336, guid: 65032dda9e83c034caae1bdfdc8e25a0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266634670736665336, guid: 65032dda9e83c034caae1bdfdc8e25a0, type: 3}
+      propertyPath: trackedPlayer
+      value: 
+      objectReference: {fileID: 1060642288}
     - target: {fileID: 8029539289533460892, guid: 65032dda9e83c034caae1bdfdc8e25a0, type: 3}
       propertyPath: m_SortingOrder
       value: 6
@@ -1505,6 +1537,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1984597251720089033, guid: 65032dda9e83c034caae1bdfdc8e25a0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266634670736665336, guid: 65032dda9e83c034caae1bdfdc8e25a0, type: 3}
+      propertyPath: trackedPlayer
+      value: 
+      objectReference: {fileID: 1060642288}
     - target: {fileID: 8029539289533460892, guid: 65032dda9e83c034caae1bdfdc8e25a0, type: 3}
       propertyPath: m_SortingOrder
       value: 4
@@ -1957,6 +1997,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1984597251720089033, guid: 65032dda9e83c034caae1bdfdc8e25a0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266634670736665336, guid: 65032dda9e83c034caae1bdfdc8e25a0, type: 3}
+      propertyPath: trackedPlayer
+      value: 
+      objectReference: {fileID: 1060642288}
     - target: {fileID: 8029539289533460892, guid: 65032dda9e83c034caae1bdfdc8e25a0, type: 3}
       propertyPath: m_SortingOrder
       value: 2
@@ -2090,6 +2138,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1984597251720089033, guid: 65032dda9e83c034caae1bdfdc8e25a0, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5266634670736665336, guid: 65032dda9e83c034caae1bdfdc8e25a0, type: 3}
+      propertyPath: trackedPlayer
+      value: 
+      objectReference: {fileID: 1060642288}
     - target: {fileID: 8029539289533460892, guid: 65032dda9e83c034caae1bdfdc8e25a0, type: 3}
       propertyPath: m_SortingOrder
       value: 5
