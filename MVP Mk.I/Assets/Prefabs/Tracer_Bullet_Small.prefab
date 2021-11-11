@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7801728095565188660}
   - component: {fileID: 515250344303641915}
   - component: {fileID: 606935951970063007}
+  - component: {fileID: 3032942020919960648}
   m_Layer: 0
   m_Name: Tracer_Bullet_Small
   m_TagString: Bullet
@@ -136,3 +137,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletLifeTime: 5
   alignToVector: 1
+--- !u!114 &3032942020919960648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912371924417391075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2186585b08d3623499905f2cfae5fea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
